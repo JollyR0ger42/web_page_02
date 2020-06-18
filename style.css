@@ -6,6 +6,9 @@
 a{
 	text-decoration: none;
 }
+label{
+	cursor: pointer;
+}
 
 /* Paddings */
 .section-side-padding{
@@ -47,11 +50,14 @@ a{
 }
 
 /* Positioning */
-.mr-30px{
-	margin-right: 30px;
+.mr-2vw{
+	margin-right: 2vw;
 }
 .mb-42px{
 	margin-bottom: 42px;
+}
+.mt-170px{
+	margin-top: 170px;
 }
 .in-block{
 	display: inline-block;
@@ -70,6 +76,7 @@ button{
 	border-radius: .2em;
 	outline: none;
 	border: .15em solid white;
+	white-space: nowrap;
 }
 .transp-button{
 	background-color: transparent;
@@ -95,15 +102,98 @@ header{
 	padding-top: 50px;
 	padding-bottom: 185px;
 }
-.links{
+header .links{
+	min-width: 250px;
 	width: 30%;
+	transition: all .2s linear;
 }
 .sign-up{
 	padding: 5px 18px;
 }
+header .content button{
+	padding: 22px 42px;
+}
+.checkbox-label, #nav-checkbox{
+	display: none;
+}
+header .content iframe{
+	width: 37.5vw;
+	height: 20.5vw;
+}
+header nav{
+	transition: all .2s linear;
+}
 header .content{
 	margin-top: 170px;
 }
-header .content button{
-	padding: 22px 42px;
+
+@media screen and (max-width: 930px){
+	/* Header */
+	header{
+		padding-bottom: 50px;
+	}
+	header .content{
+		margin-top: 20px;
+		flex-direction: column-reverse;
+	}
+	header .content iframe{
+		margin-bottom: 50px;
+		width: 90vw;
+		height: 49.5vw;
+	}
+}
+
+@media screen and (max-width: 700px){
+	/* Paddings */
+	.section-side-padding, .section-vertical-padding{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	/* Header */
+	header{
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+	.checkbox-label{
+		display: inline;
+	}
+	#nav-checkbox:checked + .links{
+		height: 100px;
+		width: 100px;
+		opacity: 1;
+	}
+	header .links{
+		position: absolute;
+		top: 60px;
+		right: 4vw;
+		overflow: hidden;
+		opacity: 0;
+		height: 0;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+	header .text{
+		display: flex;
+		flex-direction: column;
+	}
+	header .content button{
+		margin: 5px;
+		width: 250px;
+		align-self: center;
+	}
+}
+
+@media screen and (max-width: 450px){
+	/* Paddings */
+	.section-side-padding, .section-vertical-padding{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	/* Header */
+	header{
+		padding-top: 10px;
+		padding-bottom: 20px;
+	}
 }

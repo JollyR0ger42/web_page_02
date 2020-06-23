@@ -3,12 +3,11 @@ const navBar = document.querySelector('header nav');
 
 function navCheckbox(){
 	if(!checkbox.checked){
-		navBar.style.marginBottom = '120px'
+		navBar.style.marginBottom = '250px'
 	} else {
 		navBar.style.removeProperty('margin-bottom')
 	}
 }
-
 
 const collapsibles = document.getElementsByClassName('collapsible');
 
@@ -23,3 +22,33 @@ for(const collapsible of collapsibles){
 		}
 	})
 }
+
+
+$(document).ready(function(){
+	$('.carousel').slick({
+		infinite: true,
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		vertical: true,
+		verticalSwiping: true,
+		prevArrow: $('.slick-prev'),
+		nextArrow: $('.slick-next'),
+	})
+	$('.slider-for').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		asNavFor: '.slider-nav',
+	})
+	$('.slider-nav').slick({
+		infinite: true,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		centerMode: true,
+		focusOnSelect: true,
+		arrows: false,
+		centerPadding: '0px',
+		asNavFor: '.slider-for',
+	})
+})
